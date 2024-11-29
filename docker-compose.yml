@@ -14,7 +14,7 @@ services:
       - ENV=${ENV}
     volumes:
       - /usr/src/app/node_modules
-      - /home/ubuntu/github-runners/api-runner/_work/learnerr-api/learnerr-api/src/helpers/logs:/app/logs
+      - /home/ubuntu/github-runners/api-runner/_work/aws-testing-backend-api/aws-testing-backend-api/src/helpers/logs:/app/logs
 
     ports:
       - "3225:3200"

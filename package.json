@@ -24,7 +24,8 @@
     "nodemon": "^3.1.0",
     "rimraf": "^5.0.7",
     "ts-node": "^10.9.2",
-    "typescript": "5.4.5"
+    "typescript": "5.4.5",
+    "winston": "^3.17.0"
   },
   "devDependencies": {
     "env-cmd": "10.1.0"

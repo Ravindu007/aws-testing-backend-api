@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon -L src/server.ts",
     "start:prod:dev": "env-cmd -f .env.dev node dist/server.js",
-    "build": "env-cmd -f .env tsc && cp -R src/* dist/",
-    "build:dev": "env-cmd -f .env.dev tsc && cp -R src/* dist/"
+    "build": "env-cmd -f .env tsc && mkdir -p dist && cp -R src/* dist/",
+    "build:dev": "env-cmd -f .env.dev tsc && mkdir -p dist && cp -R src/* dist/"
   },
   "keywords": [],
   "author": "",

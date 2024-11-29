@@ -18,5 +18,5 @@ app.use(express.json())
 app.use("/api/v1", baseRouter)
 
 app.listen(process.env.PORT, ()=>{
-  logger.info(`Server is running on port:", ${process.env.PORT}`)
+  logger.info(`Server is running on port::", ${process.env.PORT}`)
 })

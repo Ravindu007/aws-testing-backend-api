@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - ENV=${ENV}
+    image: learnerr-api-image
+    container_name: learnerr-api-container
+    command: npm run start:prod:${ENV}
+    environment:
+      - ENV=${ENV}
+    volumes:
+      - /usr/src/app/node_modules
+      - /home/ubuntu/github-runners/api-runner/_work/learnerr-api/learnerr-api/src/core/utils/application_logs:/app/logs
+
+    ports:
+      - "3225:3200"

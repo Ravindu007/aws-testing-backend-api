@@ -1,6 +1,6 @@
 import winston from 'winston';
 
-const logPath = 'app/logs/application.log'; 
+const logPath = '/app/logs/application.log'; 
 
 const logger = winston.createLogger({
     level: 'info',

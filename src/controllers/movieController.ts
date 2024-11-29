@@ -31,6 +31,7 @@ class MovieController{
     try {
       const {id} = req.params; 
       const singleMovie = await movieService.getSingleMovie(id);
+      logger.info(`Single Movie Successfully retrived ${singleMovie}`)
       handleSuccess(res, "Single Movie Successfully retrived", singleMovie)
     } catch (error:any) {
       handleError(res,error);

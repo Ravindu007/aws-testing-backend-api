@@ -1,0 +1,29 @@
+name: TEST CI
+
+on:
+  push:
+    branches: ["master"]
+
+jobs:
+  build:
+    runs-on: self-hosted
+    environment: dev
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+          
+      - run: npm ci
+      - run: npm run build:dev
+      - run: npm i -g env-cmd
+
+      - run: sudo docker build --build-arg ENV=dev -t aws-test-ec2-api-image .
+      - run: ENV=dev docker-compose up -d
+      - run: docker system prune -f -a --volumes

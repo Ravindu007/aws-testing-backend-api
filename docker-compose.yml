@@ -7,8 +7,8 @@ services:
       dockerfile: Dockerfile
       args:
         - ENV=${ENV}
-    image: learnerr-api-image
-    container_name: learnerr-api-container
+    image: aws-test-ec2-api-image
+    container_name: aws-test-ec2-api-container
     command: npm run start:prod:${ENV}
     environment:
       - ENV=${ENV}
